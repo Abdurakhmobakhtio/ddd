@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helper.AI 🤖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="title">Helper.AI 🤖</div>
+
+  <div id="chatBox"></div>
+  <div id="typing">Helper.AI печатает... ⌛</div>
+
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Введите сообщение...">
+    <button id="sendBtn">💬</button>
+    <select id="langSelect">
+      <option value="ru">Русский</option>
+      <option value="uz">O‘zbekcha</option>
+      <option value="en">English</option>
+    </select>
+    <button id="themeToggle">🌞</button>
+    <select id="colorTheme">
+      <option value="blue">💙 Синий</option>
+      <option value="pink">💖 Розовый</option>
+      <option value="green">💚 Зеленый</option>
+    </select>
+  </div>
+
+  <div class="api-settings">
+    <input type="text" id="apiKey" placeholder="Ваш OpenAI API Key">
+    <label><input type="checkbox" id="useAPI"> Включить ChatGPT API</label>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

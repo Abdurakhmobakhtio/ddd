@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  user-select: none;
+}
+
+body {
+  background: #f2f2f2;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: 0.3s;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #101010;
+  color: #eee;
+}
+
+/* COLOR THEMES */
+body.theme-blue { --accent: #4269ff; }
+body.theme-pink { --accent: #ff4c98; }
+body.theme-green { --accent: #19c37d; }
+:root { --accent: #4269ff; }
+
+/* TOP BAR */
+#title {
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* CHAT BOX */
+#chatBox {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  animation: fadeIn 0.3s ease;
+  word-wrap: break-word;
+}
+
+.msg.bot { background: #e6e6e6; align-self: flex-start; }
+body.dark .msg.bot { background: #252525; }
+
+.msg.user { background: var(--accent); color: #fff; align-self: flex-end; }
+
+/* INPUT AREA */
+.input-area {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0,0,0,0.05);
+}
+body.dark .input-area { background: rgba(255,255,255,0.05); }
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+}
+
+.input-area button, .input-area select {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  background: var(--accent);
+  color: #fff;
+  transition: 0.2s;
+}
+.input-area button:hover, .input-area select:hover { filter: brightness(1.15); }
+
+/* API SETTINGS */
+.api-settings {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.03);
+  font-size: 14px;
+}
+.api-settings input[type=text] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  outline: none;
+}
+
+/* TYPING */
+#typing { display: none; font-style: italic; opacity: 0.6; margin: 5px; }
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE — PHONE */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+  #title { font-size: 1.2rem; padding: 10px; }
+  .input-area input, .api-settings input { font-size: 13px; }
+}
